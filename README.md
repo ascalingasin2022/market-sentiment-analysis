@@ -1,77 +1,118 @@
-# Market Sentiment Analysis
+# 📊 Market Sentiment Analysis
 
-This is a small Streamlit project I put together for analyzing market sentiment from CSV data.  
-Basically, you upload a CSV file with some text (like stock comments, tweets, or news), and the app will run sentiment analysis on it using NLTK’s VADER. Then it shows you charts and a table with results.
+This is a simple Streamlit project I created to analyze market sentiment from CSV files.  
+Basically, you upload a CSV with text about stocks, tweets, or market news, and it will calculate sentiment scores, display charts, and show detailed results in a table.
+
+Check it out here on GitHub: [market-sentiment-analysis](https://github.com/ascalingasin2022/market-sentiment-analysis)
 
 ---
 
-## What it does
-- Upload a CSV with a `text` column (other columns like `timestamp` and `symbol` are optional).
-- Runs sentiment scoring (positive, negative, neutral, compound).
-- Aggregates the results by day.
-- Shows:
-  - A line chart of the average sentiment score.
-  - A bar chart of how many entries there were.
-- Lets you download the analyzed results as CSV.
-- Includes a sample CSV in case you just want to try it quickly.
+## Features
+
+- Upload a CSV with a `text` column (optional: `timestamp` and `symbol`).
+- Automatically analyzes sentiment using **NLTK VADER**.
+- Aggregates results by day.
+- Displays:
+  - Line chart of average sentiment score.
+  - Bar chart showing number of entries.
+- Detailed table of each text with its sentiment score and label.
+- Color-coded labels (green = positive, red = negative, gray = neutral) for quick visualization.
+- Download your results as a CSV file.
+- Includes a sample CSV for easy testing.
 
 ---
 
 ## Project Structure
 
+```
+
 market-sentiment-analysis/
-│── app.py # Streamlit app (the frontend)
-│── market_sentiment.py # Functions for analyzing sentiment
-│── requirements.txt # Dependencies list
-│── run_demo.bat # Windows helper to run the app
-│── README.md # This file
+│── app.py                # Streamlit frontend
+│── market\_sentiment.py   # Sentiment analysis functions
+│── requirements.txt      # Python dependencies
+│── run\_demo.bat          # Windows helper to launch app
+│── README.md             # This file
+
+````
 
 ---
 
 ## Requirements
-- Python 3.9+ (should work on newer versions too)
-- Libraries: `streamlit`, `pandas`, `nltk`
 
-Install them with:
+- Python 3.9+  
+- Libraries:
+  - `streamlit`
+  - `pandas`
+  - `nltk`
 
+Install all dependencies with:
+
+```bash
 pip install -r requirements.txt
+````
 
-Note: the first time you run it, NLTK might need to download the vader_lexicon. The code already tries to handle that automatically.
+> Note: NLTK may download the `vader_lexicon` automatically the first time you run the app.
 
 ---
 
-## How to run
+## How to Run
 
-On Windows
-Just double-click run_demo.bat, or run: streamlit run app.py
+### Windows
 
-On Mac/Linux
+Double-click `run_demo.bat` or run:
+
+```bash
+streamlit run app.py
+```
+
+### Mac/Linux
+
+```bash
 python3 -m streamlit run app.py
-Then go to: http://localhost:8501
+```
+
+Then open [http://localhost:8501](http://localhost:8501) in your browser.
 
 ---
 
 ## CSV Format
 
-Your file must have a text column.
-Other optional ones:
+Your CSV **must** have a `text` column.
+Optional columns:
 
-    - timestamp → if missing, today’s date will be used
-    - symbol → e.g., AAPL, TSLA, etc.
+* `timestamp` → If missing, the current date/time will be used.
+* `symbol` → Stock or market symbol (e.g., AAPL, TSLA).
 
 Example:
 
-    timestamp,text,symbol
-    2025-09-01 09:00:00,The stock is doing amazing today!,AAPL
-    2025-09-01 10:30:00,Investors are worried about inflation,TSLA
-    2025-09-02 11:00:00,This new product launch looks promising,MSFT
-    2025-09-02 13:15:00,The market is crashing badly,GOOG
+```csv
+timestamp,text,symbol
+2025-09-01 09:00:00,The stock is doing amazing today!,AAPL
+2025-09-01 10:30:00,Investors are worried about inflation,TSLA
+2025-09-02 11:00:00,This new product launch looks promising,MSFT
+2025-09-02 13:15:00,The market is crashing badly,GOOG
+```
 
-If you don’t have your own CSV yet, just grab the sample CSV from inside the app (there’s a download button).
+If you don’t have a CSV ready, just download the **sample CSV** from the app interface.
 
-Output
-    Two charts side by side:
-        - Average sentiment score (line chart).
-        - Number of rows per day (bar chart).
-    - A full table of results (timestamp, text, symbol, score, label).
-    -Option to download the results as CSV.
+---
+
+## Output
+
+* **Charts**:
+
+  * Line chart for average sentiment over time.
+  * Bar chart for number of entries per day.
+* **Table**: Each row shows `timestamp`, `text`, `symbol`, `score`, `label` (color-coded).
+* **Downloadable CSV**: Save all analyzed results.
+
+---
+
+## Credits
+
+Developed by **Angoluan, Calingasin, Jayme, and Nagpal**.
+Feel free to use, modify, or contribute to this project.
+
+---
+
+Check out the repo here: [https://github.com/ascalingasin2022/market-sentiment-analysis]
