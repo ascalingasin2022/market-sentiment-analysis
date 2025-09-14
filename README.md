@@ -175,7 +175,6 @@ If you don’t have a CSV ready, just download the **sample CSV** from the app i
 ## Credits
 
 Developed by **Angoluan, Calingasin, Jayme, and Nagpal**.
-Feel free to use, modify, or contribute to this project.
 
 ---
 
