@@ -1,6 +1,6 @@
 # 📊 Market Sentiment Analysis
 
-This is a simple Streamlit project I created to analyze market sentiment from CSV files.  
+This is a simple Streamlit project that analyze market sentiment from CSV files.  
 Basically, you upload a CSV with text about stocks, tweets, or market news, and it will calculate sentiment scores, display charts, and show detailed results in a table.
 
 Check it out here on GitHub: [market-sentiment-analysis](https://github.com/ascalingasin2022/market-sentiment-analysis)
@@ -55,23 +55,87 @@ pip install -r requirements.txt
 
 ---
 
+## How to Install Python
+
+If you don’t have Python installed yet:
+
+1. Go to the official website: [https://www.python.org/downloads/](https://www.python.org/downloads/)
+2. Download the latest Python 3.x version for your operating system (Windows, macOS, or Linux).
+3. During installation on Windows, make sure to check **“Add Python to PATH”**.
+4. Verify installation by opening a terminal/command prompt and running:
+
+```bash
+python --version
+```
+
+It should show something like `Python 3.10.12` (version may vary).
+
+---
+
 ## How to Run
 
-### Windows
+### Option 1: Run locally after cloning
 
-Double-click `run_demo.bat` or run:
+1. **Clone the repo**:
 
 ```bash
+git clone https://github.com/ascalingasin2022/market-sentiment-analysis.git
+cd market-sentiment-analysis
+```
+
+2. **Install dependencies**:
+
+```bash
+pip install -r requirements.txt
+```
+
+3. **Run the Streamlit app** using one of these commands:
+
+```bash
+# Standard Streamlit command
 streamlit run app.py
+
+# Python module command
+python -m streamlit run app.py
 ```
 
-### Mac/Linux
+4. Open [http://localhost:8501](http://localhost:8501) in your browser.
+
+---
+
+### Option 2: Run directly from GitHub (without cloning)
+
+You can run the app straight from GitHub using Streamlit’s `run` command with a URL:
 
 ```bash
-python3 -m streamlit run app.py
+streamlit run https://raw.githubusercontent.com/ascalingasin2022/market-sentiment-analysis/main/app.py
 ```
 
-Then open [http://localhost:8501](http://localhost:8501) in your browser.
+> Make sure you have Python 3.9+ and required libraries installed first (`streamlit`, `pandas`, `nltk`).
+
+---
+
+### Option 3: Run using the Windows `.bat` file
+
+If you are on Windows, you can run the app using the included `.bat` file. Follow these steps:
+
+1. **Clone the repository** to your local machine:
+
+```bash
+git clone https://github.com/ascalingasin2022/market-sentiment-analysis.git
+cd market-sentiment-analysis
+```
+
+2. **Install dependencies** (if not done already):
+
+```bash
+pip install -r requirements.txt
+```
+
+3. **Run the app** by double-clicking the `run_demo.bat` file inside the project folder.
+   This will automatically open the Streamlit app in your default browser.
+
+> Make sure Python is installed and added to your PATH before running the `.bat` file.
 
 ---
 
@@ -115,4 +179,4 @@ Feel free to use, modify, or contribute to this project.
 
 ---
 
-Check out the repo here: [https://github.com/ascalingasin2022/market-sentiment-analysis]
+Check out the repo here: [https://github.com/ascalingasin2022/market-sentiment-analysis](https://github.com/ascalingasin2022/market-sentiment-analysis)
