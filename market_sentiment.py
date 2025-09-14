@@ -53,7 +53,7 @@ def aggregate(items: List[SentimentItem], by: str = "D") -> pd.DataFrame:
 
     df = df.set_index("timestamp").sort_index()
     agg = df.resample(by).agg({"score": "mean"})
-    agg = agg.rename(columns={"score": "score_mean"})  # ✅ ensures "score_mean" exists
+    agg = agg.rename(columns={"score": "score_mean"})  # ensures "score_mean" exists
     agg = agg.reset_index()
     agg["count"] = df.resample(by).size().values
     return agg
@@ -63,7 +63,7 @@ def read_csv(file) -> List[SentimentItem]:
     """Read a CSV file into a list of SentimentItems."""
     df = pd.read_csv(file)
 
-    # Handle missing timestamp → use current time
+    # Handle missing timestamp - use current time
     if "timestamp" not in df.columns:
         df["timestamp"] = datetime.now()
 
