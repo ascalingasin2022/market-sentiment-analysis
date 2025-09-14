@@ -33,11 +33,12 @@ Developed by **Angoluan, Calingasin, Jayme, and Nagpal**.
 ```
 
 market-sentiment-analysis/
-│── app.py                # Streamlit frontend
-│── market\_sentiment.py   # Sentiment analysis functions
-│── requirements.txt      # Python dependencies
-│── run\_demo.bat          # Windows helper to launch app
-│── README.md             # This file
+│── app.py                  # Streamlit frontend
+│── market\_sentiment.py    # Sentiment analysis functions
+│── requirements.txt        # Python dependencies
+│── run\_demo.bat           # Windows helper to launch app
+│── README.md               # This file
+│── sample_sentiment.csv    # Sample .csv file to upload
 
 ````
 
