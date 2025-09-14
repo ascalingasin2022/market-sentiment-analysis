@@ -1,0 +1,9 @@
+pandas
+matplotlib
+vaderSentiment
+transformers
+torch
+tweepy
+newsapi-python
+streamlit
+nltk
