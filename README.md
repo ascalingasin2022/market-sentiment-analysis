@@ -34,7 +34,6 @@ market-sentiment-analysis/
 
 Install them with:
 
-```bash
 pip install -r requirements.txt
 
 Note: the first time you run it, NLTK might need to download the vader_lexicon. The code already tries to handle that automatically.
