@@ -7,6 +7,12 @@ Check it out here on GitHub: [market-sentiment-analysis](https://github.com/asca
 
 ---
 
+## Credits
+
+Developed by **Angoluan, Calingasin, Jayme, and Nagpal**.
+
+---
+
 ## Features
 
 - Upload a CSV with a `text` column (optional: `timestamp` and `symbol`).
@@ -169,12 +175,6 @@ If you don’t have a CSV ready, just download the **sample CSV** from the app i
   * Bar chart for number of entries per day.
 * **Table**: Each row shows `timestamp`, `text`, `symbol`, `score`, `label` (color-coded).
 * **Downloadable CSV**: Save all analyzed results.
-
----
-
-## Credits
-
-Developed by **Angoluan, Calingasin, Jayme, and Nagpal**.
 
 ---
 
