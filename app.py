@@ -4,7 +4,7 @@ from market_sentiment import analyze_items, aggregate, read_csv, to_csv
 
 st.set_page_config(
     page_title="Market Sentiment Analysis",
-    page_icon="📊",  # Tab picture (emoji as favicon)
+    page_icon="📊",  
     layout="wide"
 )
 
@@ -16,14 +16,9 @@ st.caption("Developed by Angoluan, Calingasin, Jayme, and Nagpal.")
 uploaded_file = st.file_uploader("Upload CSV", type=["csv"])
 
 if uploaded_file is not None:
-    # Read CSV into SentimentItem list
-    items = read_csv(uploaded_file)
-
-    # Run sentiment analysis
-    analyzed = analyze_items(items)
-
-    # Aggregate results
-    agg = aggregate(analyzed, by="D")
+    items = read_csv(uploaded_file)     # Read CSV into SentimentItem list
+    analyzed = analyze_items(items)     # Run sentiment analysis
+    agg = aggregate(analyzed, by="D")   # Aggregate results
 
     # Show results
     st.subheader("Aggregated Sentiment Over Time")
