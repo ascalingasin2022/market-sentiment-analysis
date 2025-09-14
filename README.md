@@ -1,4 +1,4 @@
-# 📊 Market Sentiment Analysis
+# Market Sentiment Analysis
 
 This is a simple Streamlit project that analyze market sentiment from CSV files.  
 Basically, you upload a CSV with text about stocks, tweets, or market news, and it will calculate sentiment scores, display charts, and show detailed results in a table.
@@ -9,7 +9,13 @@ Check it out here on GitHub: [market-sentiment-analysis](https://github.com/asca
 
 ## Credits
 
-Developed by **Angoluan, Calingasin, Jayme, and Nagpal**.
+Group Members by 
+- **Angoluan, Phobie Jochelle R.**
+- **Calingasin, Adrian S.**
+- **Jayme, Irish Anne G.**
+- **Nagpal, Jaichand M.**
+
+To be Submitted to **Mr. Michael R. Ramos**
 
 ---
 
