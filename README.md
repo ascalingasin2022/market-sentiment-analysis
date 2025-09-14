@@ -186,3 +186,5 @@ If you don’t have a CSV ready, just download the **sample CSV** from the app i
 ---
 
 Check out the repo here: [https://github.com/ascalingasin2022/market-sentiment-analysis](https://github.com/ascalingasin2022/market-sentiment-analysis)
+
+Maintained by: Adrian Calingasin GitHub: [github.com/ascalingasin2022](github.com/ascalingasin2022)
