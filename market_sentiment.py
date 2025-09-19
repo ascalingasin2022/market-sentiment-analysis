@@ -1,93 +1,96 @@
-import pandas as pd
 import nltk
+import pandas as pd
 from nltk.sentiment import SentimentIntensityAnalyzer
-from dataclasses import dataclass
-from typing import List, Optional
-from datetime import datetime
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.linear_model import LogisticRegression
+from sklearn.pipeline import make_pipeline
 
-# Ensure VADER lexicon is available
-try:
-    nltk.data.find("sentiment/vader_lexicon.zip")
-except LookupError:
-    nltk.download("vader_lexicon")
+# Ensure required datasets are downloaded
+nltk.download("vader_lexicon", quiet=True)
+nltk.download("movie_reviews", quiet=True)
 
+from nltk.corpus import movie_reviews
+import random
 
-@dataclass
 class SentimentItem:
-    text: str
-    timestamp: datetime
-    symbol: Optional[str] = None
-    score: Optional[float] = None
-    label: Optional[str] = None
+    def __init__(self, timestamp, text, symbol=None, score=None, label=None):
+        self.timestamp = timestamp
+        self.text = text
+        self.symbol = symbol
+        self.score = score
+        self.label = label
 
 
-def get_engine():
-    """Return the VADER sentiment analyzer."""
-    return SentimentIntensityAnalyzer()
+def train_ml_model():
+    """Train a simple ML model (Logistic Regression) on NLTK movie reviews."""
+    documents = [(list(movie_reviews.words(fileid)), category)
+                 for category in movie_reviews.categories()
+                 for fileid in movie_reviews.fileids(category)]
+    random.shuffle(documents)
+
+    texts = [" ".join(words) for words, _ in documents]
+    labels = [1 if category == "pos" else 0 for _, category in documents]
+
+    model = make_pipeline(CountVectorizer(), LogisticRegression(max_iter=1000))
+    model.fit(texts, labels)
+    return model
 
 
-def analyze_items(items: List[SentimentItem]) -> List[SentimentItem]:
-    """Run sentiment analysis on a list of SentimentItems."""
-    engine = get_engine()
+# Train ML model once
+ML_MODEL = train_ml_model()
+
+
+def get_engine(engine_name="vader"):
+    if engine_name == "vader":
+        return SentimentIntensityAnalyzer()
+    elif engine_name == "ml":
+        return ML_MODEL
+    else:
+        raise ValueError(f"Unknown engine: {engine_name}")
+
+
+def analyze_items(items, engine_name="vader"):
+    engine = get_engine(engine_name)
+
     for it in items:
-        scores = engine.polarity_scores(it.text)
-        it.score = scores["compound"]
-        if it.score >= 0.05:
-            it.label = "positive"
-        elif it.score <= -0.05:
-            it.label = "negative"
-        else:
-            it.label = "neutral"
+        if engine_name == "vader":
+            scores = engine.polarity_scores(it.text)
+            it.score = scores["compound"]
+            if it.score >= 0.05:
+                it.label = "positive"
+            elif it.score <= -0.05:
+                it.label = "negative"
+            else:
+                it.label = "neutral"
+
+        elif engine_name == "ml":
+            pred = engine.predict([it.text])[0]
+            it.score = float(pred)  # 1 = positive, 0 = negative
+            it.label = "positive" if pred == 1 else "negative"
+
     return items
 
 
-def aggregate(items: List[SentimentItem], by: str = "D") -> pd.DataFrame:
-    """Aggregate sentiment scores by a resampling period (D=day, H=hour, W=week)."""
-    df = pd.DataFrame([
-        {"timestamp": it.timestamp, "score": it.score, "label": it.label}
-        for it in items if it.score is not None
-    ])
-
-    if df.empty:
+def aggregate(items, by="D"):
+    if not items:
         return pd.DataFrame()
 
-    df = df.set_index("timestamp").sort_index()
-    agg = df.resample(by).agg({"score": "mean"})
-    agg = agg.rename(columns={"score": "score_mean"})  # ensures "score_mean" exists
-    agg = agg.reset_index()
-    agg["count"] = df.resample(by).size().values
-    return agg
-
-
-def read_csv(file) -> List[SentimentItem]:
-    """Read a CSV file into a list of SentimentItems."""
-    df = pd.read_csv(file)
-
-    # Handle missing timestamp - use current time
-    if "timestamp" not in df.columns:
-        df["timestamp"] = datetime.now()
-
-    # Convert timestamps
-    df["timestamp"] = pd.to_datetime(df["timestamp"], errors="coerce").fillna(datetime.now())
-
-    items = [
-        SentimentItem(
-            text=row["text"],
-            timestamp=row["timestamp"],
-            symbol=row["symbol"] if "symbol" in df.columns else None,
-        )
-        for _, row in df.iterrows()
-    ]
-    return items
-
-
-def to_csv(items: List[SentimentItem]) -> str:
-    """Convert SentimentItems into CSV string."""
     df = pd.DataFrame([{
         "timestamp": it.timestamp,
-        "text": it.text,
-        "symbol": it.symbol,
         "score": it.score,
         "label": it.label
     } for it in items])
-    return df.to_csv(index=False)
+
+    df["timestamp"] = pd.to_datetime(df["timestamp"], errors="coerce")
+    grouped = df.groupby(pd.Grouper(key="timestamp", freq=by)).agg(
+        score_mean=("score", "mean"),
+        count=("score", "count")
+    ).reset_index()
+    return grouped
+
+
+def read_csv(file):
+    return [
+        SentimentItem(row["timestamp"], row["text"], row.get("symbol", None))
+        for _, row in pd.read_csv(file).iterrows()
+    ]
