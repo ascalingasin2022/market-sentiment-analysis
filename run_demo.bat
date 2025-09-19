@@ -1,19 +1,25 @@
 @echo off
-REM ==========================================
-REM Market Sentiment Analysis - Web App
-REM ==========================================
+echo ============================================
+echo   Market Sentiment Analysis - Streamlit App
+echo ============================================
 
-echo Setting up virtual environment...
-python -m venv venv
+REM Create virtual environment if not exists
+if not exist venv (
+    echo Creating virtual environment...
+    python -m venv venv
+)
 
-echo Activating virtual environment...
-call venv\Scripts\activate.bat
+REM Activate virtual environment
+call venv\Scripts\activate
 
-echo Installing dependencies...
+REM Upgrade pip
 python -m pip install --upgrade pip
+
+REM Install dependencies
 pip install -r requirements.txt
 
-echo Launching Streamlit app...
-python -m streamlit run app.py
+REM Run the Streamlit app
+echo Starting Streamlit app...
+streamlit run app.py
 
 pause
