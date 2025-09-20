@@ -29,3 +29,95 @@ timestamp,text,symbol
 2025-09-21 14:10:00,Streaming service secures exclusive movie rights,NFLX
 2025-09-22 09:50:00,E-commerce platform sees record sales during promotion,AMZN
 2025-09-22 11:15:00,Smartphone maker unveils eco-friendly product line,SMNG
+2025-09-22 13:40:00,Pharmaceutical breakthrough boosts confidence,PFE
+2025-09-22 15:10:00,Investors fear rising interest rates,BAC
+2025-09-23 09:05:00,Strong quarterly profits surprise the market,AAPL
+2025-09-23 10:30:00,Chip shortages weigh on production,INTC
+2025-09-23 11:50:00,Energy stocks climb as oil prices rise,XOM
+2025-09-23 13:20:00,Cloud revenue growth impresses analysts,MSFT
+2025-09-23 14:45:00,Concerns grow over regulatory fines,GOOG
+2025-09-24 09:15:00,New EV model gets great reviews,TSLA
+2025-09-24 10:40:00,Fast food chain sees strong franchise growth,MCD
+2025-09-24 12:00:00,Online fashion platform attracts younger buyers,ZARA
+2025-09-24 13:35:00,Investors remain cautious about slowing economy,SPY
+2025-09-24 15:00:00,Strong housing demand boosts construction stocks,LEN
+2025-09-25 09:10:00,Banking sector rebounds after positive outlook,JPM
+2025-09-25 10:25:00,Supply chain recovery lifts manufacturing outlook,CAT
+2025-09-25 11:55:00,Streaming growth slows down due to competition,NFLX
+2025-09-25 13:40:00,Cloud services adoption accelerates,AMZN
+2025-09-25 15:20:00,High volatility makes investors cautious,NVDA
+2025-09-26 09:00:00,Insurance sector remains stable,MET
+2025-09-26 10:45:00,Food delivery app expands into Asia,UBER
+2025-09-26 12:30:00,Healthcare reforms spark uncertainty,UNH
+2025-09-26 14:15:00,Semiconductor demand keeps climbing,AMD
+2025-09-27 09:25:00,Automaker beats expectations on EV sales,F
+2025-09-27 10:50:00,New regulations weigh on social media platforms,META
+2025-09-27 12:10:00,Retail giant announces holiday hiring spree,WMT
+2025-09-27 13:45:00,Strong demand for AI chips continues,NVDA
+2025-09-27 15:05:00,Investors optimistic about global recovery,SPY
+2025-09-28 09:35:00,Coffee giant introduces new seasonal drinks,SBUX
+2025-09-28 11:00:00,Positive GDP data boosts investor confidence,DIA
+2025-09-28 12:20:00,Rising gas prices hurt airline profits,DAL
+2025-09-28 13:40:00,New smartphone launch receives mixed reviews,SMSN
+2025-09-28 15:10:00,Tech layoffs spark concerns about slowdown,GOOG
+2025-09-29 09:15:00,Financial services company beats EPS forecast,V
+2025-09-29 10:45:00,Weak consumer confidence data rattles markets,SPY
+2025-09-29 12:05:00,New medical device receives FDA approval,JNJ
+2025-09-29 13:30:00,Automaker recalls vehicles due to safety concerns,GM
+2025-09-29 15:00:00,Cloud gaming demand surges,MSFT
+2025-09-30 09:20:00,Positive inflation report sparks market rally,SPY
+2025-09-30 10:40:00,Earnings miss sends stock lower,INTC
+2025-09-30 12:15:00,Fashion brand launches sustainable clothing line,ZARA
+2025-09-30 13:50:00,AI adoption drives optimism in tech sector,NVDA
+2025-09-30 15:05:00,Analyst downgrades hurt sentiment,TSLA
+2025-10-01 09:05:00,Pharma giant partners with biotech startup,PFE
+2025-10-01 10:25:00,Airline sector sees recovery in travel demand,AAL
+2025-10-01 11:55:00,Investors concerned about debt ceiling crisis,SPY
+2025-10-01 13:25:00,New partnership strengthens e-commerce presence,AMZN
+2025-10-01 14:55:00,Declining ad revenue pressures social media firms,META
+2025-10-02 09:35:00,Chipmaker expands into automotive sector,AMD
+2025-10-02 11:10:00,Strong harvest boosts agricultural stocks,ADM
+2025-10-02 12:40:00,New data breach shakes investor confidence,META
+2025-10-02 14:15:00,Tech optimism continues with AI investments,GOOG
+2025-10-02 15:30:00,Volatility index spikes as market uncertainty grows,VIX
+2025-10-03 09:15:00,EV charging network expands nationwide,TSLA
+2025-10-03 10:50:00,Retailer faces declining foot traffic,M
+2025-10-03 12:05:00,Positive sales boost investor morale,NKE
+2025-10-03 13:45:00,Gold prices rise amid global tensions,GLD
+2025-10-03 15:20:00,High growth in cloud adoption continues,MSFT
+2025-10-04 09:10:00,Bank earnings beat forecasts,C
+2025-10-04 10:35:00,Market faces correction after strong rally,SPY
+2025-10-04 12:15:00,New movie release boosts streaming subscribers,NFLX
+2025-10-04 13:40:00,Renewable energy projects gain traction,NEE
+2025-10-04 15:05:00,Investors worry about trade tensions,SPY
+2025-10-05 09:20:00,Automaker invests heavily in battery tech,F
+2025-10-05 10:45:00,Weak job report sparks concerns,DIA
+2025-10-05 12:25:00,Cloud platform secures major government contract,AMZN
+2025-10-05 13:50:00,Strong subscriber growth lifts streaming stock,NFLX
+2025-10-05 15:15:00,Geopolitical risks dampen investor sentiment,SPY
+2025-10-06 09:00:00,Earnings season starts strong with tech results,AAPL
+2025-10-06 10:30:00,New regulations threaten pharmaceutical margins,PFE
+2025-10-06 12:00:00,Investors optimistic about retail recovery,WMT
+2025-10-06 13:35:00,Weak demand hurts semiconductor sector,INTC
+2025-10-06 15:05:00,AI-driven tools reshape business outlook,GOOG
+2025-10-07 09:10:00,Bank stocks rise as Fed signals rate cuts,JPM
+2025-10-07 10:40:00,Negative outlook weighs on airline stocks,UAL
+2025-10-07 12:15:00,Fast-food chain unveils plant-based menu,MCD
+2025-10-07 13:50:00,Investors show caution ahead of CPI report,SPY
+2025-10-07 15:20:00,Strong chip demand supports growth outlook,NVDA
+2025-10-08 09:25:00,E-commerce platform expands into Europe,SHOP
+2025-10-08 10:55:00,Inflation fears continue to dominate sentiment,DIA
+2025-10-08 12:20:00,Strong dividend payout boosts investor confidence,T
+2025-10-08 13:40:00,EV demand accelerates across markets,TSLA
+2025-10-08 15:00:00,Healthcare firm faces lawsuits over safety issues,JNJ
+2025-10-09 09:15:00,Cloud growth remains steady,MSFT
+2025-10-09 10:35:00,Gold rallies as investors seek safe havens,GLD
+2025-10-09 12:10:00,Slowing growth sparks market worries,SPY
+2025-10-09 13:30:00,New social media app gains traction,META
+2025-10-09 15:00:00,Chip giant invests in advanced fabs,TSM
+2025-10-10 09:05:00,Consumer spending data beats expectations,DIA
+2025-10-10 10:25:00,Tech giant launches new wearable device,AAPL
+2025-10-10 11:55:00,Auto sector faces rising material costs,F
+2025-10-10 13:15:00,Earnings disappointment sends shares lower,NFLX
+2025-10-10 14:45:00,Strong recovery boosts airline outlook,LUV
+2025-10-10 15:20:00,Global tensions continue to spook investors,SPY
