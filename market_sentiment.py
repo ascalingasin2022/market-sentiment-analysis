@@ -5,7 +5,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import make_pipeline
 
-# Ensure required datasets are downloaded
+# Downloading datasets from NLTK
 nltk.download("vader_lexicon", quiet=True)
 nltk.download("movie_reviews", quiet=True)
 
@@ -22,7 +22,7 @@ class SentimentItem:
 
 
 def train_ml_model():
-    """Train a simple ML model (Logistic Regression) on NLTK movie reviews."""
+    """Train a simple ML model (Logistic Regression) on NLTK movie reviews dataset."""
     documents = [(list(movie_reviews.words(fileid)), category)
                  for category in movie_reviews.categories()
                  for fileid in movie_reviews.fileids(category)]
@@ -36,7 +36,7 @@ def train_ml_model():
     return model
 
 
-# Train ML model once
+# Train Machine Learning model
 ML_MODEL = train_ml_model()
 
 
