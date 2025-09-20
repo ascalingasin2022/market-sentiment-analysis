@@ -143,23 +143,22 @@ if uploaded_file is not None:
 else:
     st.info("Please upload a CSV file to begin.")
 
-    # Provide sample CSV
-    sample_csv = """timestamp,text,symbol
-2025-09-01 09:00:00,The stock is doing amazing today!,AAPL
-2025-09-01 10:30:00,Investors are worried about inflation,TSLA
-2025-09-02 11:00:00,This new product launch looks promising,MSFT
-2025-09-02 13:15:00,The market is crashing badly,GOOG
-2025-09-03 09:45:00,I feel confident holding my shares,AMZN
-2025-09-03 14:20:00,Uncertainty is making me nervous,NVDA
-2025-09-04 10:00:00,Earnings report was fantastic,AAPL
-2025-09-04 12:30:00,Global news is dragging stocks down,TSLA
-2025-09-05 09:10:00,Strong momentum in the tech sector,MSFT
-2025-09-05 15:45:00,This feels like the start of a recession,GOOG
-"""
+    # Provide download link to sample_sentiment.csv (must be in the same directory)
+    sample_path = os.path.join(HERE, "sample_sentiment.csv")
+    if os.path.exists(sample_path):
+        with open(sample_path, "rb") as f:
+            st.download_button(
+                label="📥 Download Sample CSV",
+                data=f,
+                file_name="sample_sentiment.csv",
+                mime="text/csv",
+            )
+    else:
+        st.warning("Sample CSV file (sample_sentiment.csv) not found in the app directory.")
 
-    st.download_button(
-        label="📥 Download Sample CSV",
-        data=sample_csv,
-        file_name="sample_sentiment.csv",
-        mime="text/csv",
-    )
+    # st.download_button(
+    #     label="📥 Download Sample CSV",
+    #     data=sample_csv,
+    #     file_name="sample_sentiment.csv",
+    #     mime="text/csv",
+    # )
