@@ -1,7 +1,6 @@
 # Market Sentiment Analysis
 
-This is a simple Streamlit project that analyze market sentiment from CSV files.  
-Basically, you upload a CSV with text about stocks, tweets, or market news, and it will calculate sentiment scores, display charts, and show detailed results in a table.
+This is a simple Streamlit project that analyzes market sentiment from CSV files. You can upload a CSV containing stock comments, tweets, or market news, and the app will automatically process the text and evaluate its sentiment. The system uses two approaches: a rule-based method (VADER), which calculates sentiment scores using a predefined lexicon, and a machine learning method (Logistic Regression), which has been trained to classify text as either positive or negative. The results are then presented through interactive charts showing sentiment trends over time, as well as a detailed table of entries that can be downloaded as a CSV file for further analysis.
 
 Check it out here on GitHub: [market-sentiment-analysis](https://github.com/ascalingasin2022/market-sentiment-analysis)
 
